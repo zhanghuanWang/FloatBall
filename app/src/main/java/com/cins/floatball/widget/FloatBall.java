@@ -7,6 +7,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.cins.floatball.utils.ResourceUtils;
 
 import java.util.Timer;
@@ -101,14 +103,16 @@ public class FloatBall extends FrameLayout implements View.OnTouchListener {
         // 设置window type
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             mWmParams.type = WindowManager.LayoutParams.TYPE_TOAST;
+            Log.i("df", "使用的type——tosat");
         } else {
             mWmParams.type = WindowManager.LayoutParams.TYPE_PHONE;
+            Log.i("df", "使用的type——phone");
         }
         // 设置图片格式，效果为背景透明
         mWmParams.format = PixelFormat.RGBA_8888;
         // 设置浮动窗口不可聚焦（实现操作除浮动窗口外的其他可见窗口的操作）
         mWmParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
-        // 调整悬浮窗显示的停靠位置为左侧置�?
+        // 调整悬浮窗显示的停靠位置为左侧置
         mWmParams.gravity = Gravity.LEFT | Gravity.TOP;
 
         mScreenHeight = mWindowManager.getDefaultDisplay().getHeight();
@@ -409,6 +413,7 @@ public class FloatBall extends FrameLayout implements View.OnTouchListener {
      * 打开客服页面
      */
     private void openFeedback() {
+
     }
 
     /**
