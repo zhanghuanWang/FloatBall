@@ -1,4 +1,4 @@
 # FloatBall
 
 ## SnapShot
-![](/screenshots/screenshots1.gif)
+![](/Screenshots/screenshots1.gif)
